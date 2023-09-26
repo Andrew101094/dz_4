@@ -10,3 +10,17 @@
 # Пример
 # 4 -> 1 2 3 4
 # 9
+
+n = int(input("Введите количество кустов на грядке: "))
+berry = list([int(input(f"Количество ягод на {i+1} кусте: ")) for i in range(n)])
+print(berry)
+sum_berry = 0
+x = int(input("Введите номер куста: "))
+if x == 1:
+    sum_berry = berry[0] + berry[1] + berry[-1]
+elif x == len(berry):
+    sum_berry = berry[-2] + berry[-1] + berry[0]
+else: 
+    sum_berry = berry[x - 1] + berry[x - 2] + berry[x]
+print(f"Собрано {sum_berry} ягод")
+
